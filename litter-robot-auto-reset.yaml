@@ -19,29 +19,28 @@ blueprint:
           entity:
             domain: vacuum
           multiple: false
-  trigger:
-    - platform: state
-      entity_id:
-        !input litter_box
-      attribute: status
-      to: BR
-  actions:
-    - delay:
-        hours: 0
-        minutes: 5
-        seconds: 0
-        milliseconds: 0
-    - condition: state
-      entity_id: !input litter_box
-      state: error
-    - service: switch.turn_off
-      data: {}
-      target: !input power_switch
-    - delay:
-        hours: 0
-        minutes: 0
-        seconds: 30
-        milliseconds: 0
-    - service: switch.turn_on
-      data: {}
-      target: !input power_switch
+trigger:
+  - platform: state
+    entity_id: !input litter_box
+    attribute: status
+    to: 'BR'
+actions:
+  - delay:
+      hours: 0
+      minutes: 5
+      seconds: 0
+      milliseconds: 0
+  - condition: state
+    entity_id: !input litter_box
+    state: error
+  - service: switch.turn_off
+    data:
+      entity_id: !input power_switch
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 30
+      milliseconds: 0
+  - service: switch.turn_on
+    data:
+      entity_id: !input power_switch
