@@ -38,7 +38,7 @@ trigger:
     entity_id: !input litter_box
     attribute: status
     to: 'pd'
-actions
+actions:
   - delay:
       hours: 0
       minutes: 5
