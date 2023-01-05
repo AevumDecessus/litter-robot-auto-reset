@@ -14,7 +14,7 @@ blueprint:
       description: The Litter Robot device to automate
       selector:
         entity:
-          integration: Litter-Robot
+          integration: litterrobot
           domain: vacuum
           multiple: false
 trigger:
