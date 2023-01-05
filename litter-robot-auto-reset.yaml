@@ -21,8 +21,24 @@ trigger:
   - platform: state
     entity_id: !input litter_box
     attribute: status
-    to: 'BR'
-actions:
+    to: 'br'
+  - platform: state
+    entity_id: !input litter_box
+    attribute: status
+    to: 'dhf'
+  - platform: state
+    entity_id: !input litter_box
+    attribute: status
+    to: 'dpf'
+  - platform: state
+    entity_id: !input litter_box
+    attribute: status
+    to: 'hpf'
+  - platform: state
+    entity_id: !input litter_box
+    attribute: status
+    to: 'pd'
+actions
   - delay:
       hours: 0
       minutes: 5
