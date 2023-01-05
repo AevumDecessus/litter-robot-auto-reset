@@ -7,17 +7,15 @@ blueprint:
       name: Smart Plug
       description: Smart plug that the litter robot is plugged into
       selector:
-        device:
-          entity:
-            domain: switch
+        entity:
+          domain: switch
     litter_box:
       name: Litter Robot
       description: The Litter Robot device to automate
       selector:
-        device:
+        entity:
           integration: Litter-Robot
-          entity:
-            domain: vacuum
+          domain: vacuum
           multiple: false
 trigger:
   - platform: state
