@@ -45,4 +45,3 @@ blueprint:
     - service: switch.turn_on
       data: {}
       target: !input power_switch
-  mode: single
